@@ -1,0 +1,301 @@
+:root {
+  --background-color: #000;
+  --text-color: #fff;
+  --highlight-red: #ff0000;
+  --highlight-yellow: #FFD700;
+  --card-bg-color: #111;
+  --font-family: 'Inter', sans-serif;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: var(--font-family);
+  background-color: var(--background-color);
+  color: var(--text-color);
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+h1, h2, h3 {
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+
+
+/* Хэдер */
+.header {
+  text-align: center;
+  background-color: var(--card-bg-color);
+  padding: 1rem 2rem;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid var(--highlight-red);
+}
+
+.header h1 {
+  font-size: 1.8rem;
+  color: var(--highlight-red);
+}
+
+.menu {
+  display: flex;
+  list-style: none;
+  gap: 1.5rem;
+}
+
+.menu li a {
+  font-weight: 600;
+  color: var(--text-color);
+  padding: 0.5rem 1rem;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.menu li a:hover {
+  background-color: var(--highlight-red);
+  color: #fff;
+  border-radius: 5px;
+}
+
+/* Герой-секция */
+.hero-section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 4rem 2rem;
+}
+
+.hero-text {
+  flex: 1;
+  max-width: 600px;
+}
+
+.hero-text h2 {
+  font-size: 2.5rem;
+  color: var(--highlight-red);
+}
+
+.hero-text p {
+  font-size: 1.2rem;
+  line-height: 1.6;
+}
+
+.lojo {
+  margin-top: -300px;
+  flex-shrink: 0;
+  width: 500px; 
+  height: auto;
+  margin-left: 900px; /* Разместил справа */
+}
+
+.lojo img {
+  width: 100%;
+  height: auto;
+}
+
+/* Таймлайн */
+.timeline-section {
+  padding: 4rem 2rem;
+  text-align: center;
+}
+
+.timeline {
+  position: relative;
+  margin-top: 2rem;
+  padding-left: 2rem;
+  border-left: 3px solid var(--highlight-yellow);
+}
+
+.timeline-item {
+  position: relative;
+  margin-bottom: 2rem;
+  padding: 1rem;
+  background-color: var(--card-bg-color);
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
+}
+
+.timeline-item::before {
+  content: '';
+  position: absolute;
+  left: -15px;
+  top: 20px;
+  width: 10px;
+  height: 10px;
+  background-color: var(--highlight-yellow);
+  border-radius: 50%;
+}
+
+/* Грид-секция */
+.grid-section {
+  padding: 4rem 2rem;
+}
+
+.grid-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+}
+
+.grid-card {
+  background-color: var(--card-bg-color);
+  padding: 1.5rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.grid-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.7);
+}
+
+/* Секция "Тұлға" */
+.figures-section {
+  padding: 4rem 2rem;
+}
+
+.figure-cards {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.figure-card {
+  background-color: var(--card-bg-color);
+  width: 300px;
+  padding: 1.5rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.figure-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.7);
+}
+
+.figure-card img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  margin-bottom: 1rem;
+}
+
+.highlight {
+  color: var(--highlight-yellow);
+  font-weight: bold;
+}
+.cta-button {
+  padding: 0.8rem 1.5rem;
+  background-color: var(--highlight-red);
+  color: #fff;
+  border-radius: 5px;
+  transition: transform 0.3s ease;
+}
+
+.cta-button:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.7);
+}
+
+/* Стили для модального окна */
+.modal {
+  display: none; /* Окно скрыто по умолчанию */
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.8); /* Полупрозрачный фон */
+}
+
+.modal-content {
+  background-color: var(--card-bg-color);
+  margin: 10% auto;
+  padding: 20px;
+  border-radius: 10px;
+  width: 80%;
+  max-width: 100%;
+  color: var(--text-color);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+  text-align: center;
+}
+
+.close-button {
+  color: var(--highlight-yellow);
+  float: right;
+  font-size: 24px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.close-button:hover {
+  color: var(--highlight-red);
+}
+
+/* Общие стили для кнопок */
+.button-container {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.custom-button {
+  display: inline-block;
+  padding: 0.8rem 1.5rem;
+  font-size: 1rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  color: #fff;
+  border-radius: 30px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Telegram кнопка */
+.telegram-button {
+  background-color: #0088cc;
+}
+
+.telegram-button:hover {
+  background-color: #007ab8;
+  box-shadow: 0 8px 20px rgba(0, 136, 204, 0.6);
+}
+
+/* Instagram кнопка */
+.instagram-button {
+  background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
+}
+
+.instagram-button:hover {
+  background: linear-gradient(45deg, #fa8231, #e6522c, #d4213d, #cb1c65, #b1158b);
+  box-shadow: 0 8px 20px rgba(220, 39, 67, 0.6);
+}
+
+/* TikTok кнопка */
+.tiktok-button {
+  background-color: #010101;
+  border: 2px solid #ee1d52;
+}
+
+.tiktok-button:hover {
+  background-color: #ee1d52;
+  color: #010101;
+  border: 2px solid #010101;
+  box-shadow: 0 8px 20px rgba(238, 29, 82, 0.6);
+}
